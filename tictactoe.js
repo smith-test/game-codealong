@@ -69,16 +69,16 @@ function main() {
         renderBoard();
         renderMessage();
         
-        let row = getUserInput('row'); //passing in string
+        let row = getUserInput('row');
         let col = getUserInput('column');
         
-        const selectedSpace = board[row-1][col-1]
+        const selectedSpace = board[row - 1][col - 1];
 
         if (selectedSpace !== ' ' ){
             console.log("This spot is occupied! Please choose an empty spot!")
         } else {
             //UPDATE THE BOARD STATE
-            board[row -1][col -1] = turn;  //subtract 1 from the user input to match an index value
+            board[row - 1][col - 1] = turn;  //subtract 1 from the user input to match an index value
             
             checkWinner() //this will check for winner each time the board is updated above
 
@@ -95,7 +95,11 @@ function main() {
        
     }
     renderBoard();
-    console.log('Congrats to Player ${winner} you won')
+    if (winner === 'T') {
+      console.log('Tie Game!!!');
+    } else {
+      console.log(`Congrats to Player ${winner}, you won!`);
+    }
 }
 
 function renderBoard() {
@@ -140,7 +144,7 @@ function checkWinner(){
 
 //this will handle no winner and now empty
     const isEmpty = board.some(row => row.includes[' '])
-    if(!winner && isEmpty)
-    
-
+    if(!winner && isEmpty){
+        winner = 'T';
+      }
 }
