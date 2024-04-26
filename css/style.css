@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    height: 100vh;
+    flex-direction: column;
+  }
+  
+  .board {
+    height: 700px;
+    width: 700px;
+    background-color: deepskyblue;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 25px;
+  }
+  
+  .cell {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 89px;
+    color: deepskyblue;
+  }
+  
+  .mb-30 {
+    margin-bottom: 30px;
+  }
+  
+  .flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  button {
+    background-color: blue;
+    color: white;
+    
+  }
