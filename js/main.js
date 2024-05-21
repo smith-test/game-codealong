@@ -42,7 +42,7 @@ const WINNING_COMBOS = [
     ],
   ];
   /*------ Cached Elements -------*/
-const messageEl = document.querySelector('h3.message-header');
+const messageEl = document.getElementById('header3');
 const boardEl = document.querySelector('div.board');
 
 boardEl.addEventListener('click', handleBoardClick);  /*add event listener takes two parameters.*/
@@ -56,23 +56,26 @@ init();
 function init() {
     board = [
       [null, null, null],
-      [null, null, null],
+      [null, null, null],*----------
+      ++
+      +
       [null, null, null],
     ];
   
     turn = 'X';
     winner = null;
-  
     render();
+    
 }
   
 function render() {
     renderMessage();
     renderBoard();
+    renderNewGameBtn();
 }
 
-function renderNewGamBtn(){
-    if(winner)
+function renderNewGameBtn(){
+    if(winner) {
         const newGameBtn = document.createElement('button')
         newGameBtn.innerText = 'New Game'
         newGameBtn.addEventListener('click', init) /**click is the action and init is the function we call */
@@ -83,7 +86,7 @@ function renderNewGamBtn(){
             newGameBtn.remove();
         }
     }
-
+}
 
 function renderMessage() {
     if (winner === 'T') {
@@ -92,7 +95,7 @@ function renderMessage() {
         messageEl.innertext = `It is ${turn}'s turn`
     } else {
         messageEl.innerText = `Player ${winner} won!`;
-    }
+    } 
  }
 
 function renderBoard(){
@@ -149,3 +152,7 @@ function checkWinner() {
         winner = 'T';
       }
     } 
+
+
+
+  
